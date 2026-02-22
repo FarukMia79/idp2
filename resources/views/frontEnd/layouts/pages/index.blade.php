@@ -11,8 +11,8 @@
 <meta property="og:image" content="{{ asset($generalsetting->white_logo) }}" />
 <meta property="og:description" content="" />
 @endpush @push('css')
-<link rel="stylesheet" href="{{ asset('public/frontEnd/css/owl.carousel.min.css') }}" />
-<link rel="stylesheet" href="{{ asset('public/frontEnd/css/owl.theme.default.min.css') }}" />
+<link rel="stylesheet" href="{{ asset('frontEnd/css/owl.carousel.min.css') }}" />
+<link rel="stylesheet" href="{{ asset('frontEnd/css/owl.theme.default.min.css') }}" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" rel="stylesheet" />
 @endpush @section('content')
 <section class="slider-section">
@@ -90,12 +90,12 @@
                     @foreach ($menucategories as $key => $value)
                         <div class="cat_item">
                             <div class="cat_img">
-                                <a href="{{ route('category', $value->slug) }}">
+                                <a href="#">
                                     <img src="{{ asset($value->image) }}" alt="" />
                                 </a>
                             </div>
                             <div class="cat_name">
-                                <a href="{{ route('category', $value->slug) }}">
+                                <a href="#">
                                     {{ $value->name }}
                                 </a>
                             </div>
@@ -144,7 +144,7 @@
                                 </div>
                                 @endif
                                 <div class="pro_img">
-                                    <a href="{{ route('product', $value->slug) }}">
+                                    <a href="#">
                                         <img src="{{ asset($value->image ? $value->image->image : '') }}"
                                             alt="{{ $value->name }}" />
                                     </a>
@@ -152,7 +152,7 @@
                                 <div class="pro_des">
                                     <div class="pro_name">
                                         <a
-                                            href="{{ route('product', $value->slug) }}">{{ Str::limit($value->name, 80) }}</a>
+                                            href="#">{{ Str::limit($value->name, 80) }}</a>
                                     </div>
                                     <div class="pro_price">
                                         <p>
@@ -171,14 +171,14 @@
                                 <div class="pro_btn">
                                    
                                     <div class="cart_btn order_button">
-                                        <a href="{{ route('product', $value->slug) }}"
+                                        <a href="#"
                                             class="addcartbutton">অর্ডার করুন </a>
                                     </div>
                                 </div>
                             @else
                                 <div class="pro_btn">
                                     
-                                    <form action="{{ route('cart.store') }}" method="POST">
+                                    <form action="#" method="POST">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $value->id }}" />
                                         <input type="hidden" name="qty" value="1" />
@@ -191,7 +191,7 @@
                 </div>
             </div>
             <div class="col-sm-12">
-               <a href="{{ route('hotdeals') }}" class="view_more_btn" style="float:left">View More</a> 
+               <a href="#" class="view_more_btn" style="float:left">View More</a> 
             </div>
         </div>
     </div>
@@ -227,7 +227,7 @@
                                 </div>
                                 @endif
                                 <div class="pro_img">
-                                    <a href="{{ route('product', $value->slug) }}">
+                                    <a href="#">
                                         <img src="{{ asset($value->image ? $value->image->image : '') }}"
                                             alt="{{ $value->name }}" />
                                     </a>
@@ -235,7 +235,7 @@
                                 <div class="pro_des">
                                     <div class="pro_name">
                                         <a
-                                            href="{{ route('product', $value->slug) }}">{{ Str::limit($value->name, 80) }}</a>
+                                            href="#">{{ Str::limit($value->name, 80) }}</a>
                                     </div>
                                     <div class="pro_price">
                                         <p>
@@ -254,14 +254,14 @@
                                 <div class="pro_btn">
                                    
                                     <div class="cart_btn order_button">
-                                        <a href="{{ route('product', $value->slug) }}"
+                                        <a href="#"
                                             class="addcartbutton">অর্ডার করুন </a>
                                     </div>
                                 </div>
                             @else
                                 <div class="pro_btn">
                                     
-                                    <form action="{{ route('cart.store') }}" method="POST">
+                                    <form action="#" method="POST">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $value->id }}" />
                                         <input type="hidden" name="qty" value="1" />
@@ -275,7 +275,7 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="show_more_btn">
-                        <a href="{{ route('category', $homecat->slug) }}" class="view_more_btn">View More</a>
+                        <a href="#" class="view_more_btn">View More</a>
                     </div>
                 </div>
             </div>
@@ -284,8 +284,8 @@
 @endforeach
 
 @endsection @push('script')
-<script src="{{ asset('public/frontEnd/js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('public/frontEnd/js/jquery.syotimer.min.js') }}"></script>
+<script src="{{ asset('frontEnd/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('frontEnd/js/jquery.syotimer.min.js') }}"></script>
 
 <script>
     $(document).ready(function() {
